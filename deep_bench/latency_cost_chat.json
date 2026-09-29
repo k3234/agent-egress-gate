@@ -1,0 +1,286 @@
+{
+  "summary": {
+    "model": "deepseek-chat",
+    "n": 30,
+    "avg_latency_ms": 913.5,
+    "p50_latency_ms": 911.7,
+    "max_latency_ms": 1025.8,
+    "total_tokens": 4332,
+    "avg_tokens_per_sample": 144.4,
+    "avg_prompt_tokens": 138.2,
+    "avg_completion_tokens": 6.2,
+    "flow_avg_latency_ms": 0.0706
+  },
+  "per_sample": [
+    {
+      "id": "r01",
+      "label": "restrict",
+      "latency_ms": 1010.1,
+      "prompt_tokens": 137,
+      "completion_tokens": 7,
+      "total_tokens": 144,
+      "flow_latency_ms": 0.208
+    },
+    {
+      "id": "r02",
+      "label": "restrict",
+      "latency_ms": 963.0,
+      "prompt_tokens": 141,
+      "completion_tokens": 7,
+      "total_tokens": 148,
+      "flow_latency_ms": 0.067
+    },
+    {
+      "id": "r03",
+      "label": "block",
+      "latency_ms": 859.1,
+      "prompt_tokens": 138,
+      "completion_tokens": 6,
+      "total_tokens": 144,
+      "flow_latency_ms": 0.058
+    },
+    {
+      "id": "r04",
+      "label": "restrict",
+      "latency_ms": 883.8,
+      "prompt_tokens": 143,
+      "completion_tokens": 7,
+      "total_tokens": 150,
+      "flow_latency_ms": 0.07
+    },
+    {
+      "id": "r05",
+      "label": "allow",
+      "latency_ms": 860.6,
+      "prompt_tokens": 137,
+      "completion_tokens": 6,
+      "total_tokens": 143,
+      "flow_latency_ms": 0.048
+    },
+    {
+      "id": "r06",
+      "label": "restrict",
+      "latency_ms": 927.8,
+      "prompt_tokens": 137,
+      "completion_tokens": 7,
+      "total_tokens": 144,
+      "flow_latency_ms": 0.052
+    },
+    {
+      "id": "r07",
+      "label": "block",
+      "latency_ms": 861.8,
+      "prompt_tokens": 137,
+      "completion_tokens": 6,
+      "total_tokens": 143,
+      "flow_latency_ms": 0.064
+    },
+    {
+      "id": "r08",
+      "label": "restrict",
+      "latency_ms": 932.6,
+      "prompt_tokens": 139,
+      "completion_tokens": 7,
+      "total_tokens": 146,
+      "flow_latency_ms": 0.062
+    },
+    {
+      "id": "r09",
+      "label": "allow",
+      "latency_ms": 821.5,
+      "prompt_tokens": 137,
+      "completion_tokens": 6,
+      "total_tokens": 143,
+      "flow_latency_ms": 0.081
+    },
+    {
+      "id": "r10",
+      "label": "block",
+      "latency_ms": 1025.8,
+      "prompt_tokens": 135,
+      "completion_tokens": 6,
+      "total_tokens": 141,
+      "flow_latency_ms": 0.044
+    },
+    {
+      "id": "r11",
+      "label": "block",
+      "latency_ms": 939.5,
+      "prompt_tokens": 138,
+      "completion_tokens": 6,
+      "total_tokens": 144,
+      "flow_latency_ms": 0.06
+    },
+    {
+      "id": "r12",
+      "label": "block",
+      "latency_ms": 897.0,
+      "prompt_tokens": 136,
+      "completion_tokens": 6,
+      "total_tokens": 142,
+      "flow_latency_ms": 0.053
+    },
+    {
+      "id": "r13",
+      "label": "block",
+      "latency_ms": 915.7,
+      "prompt_tokens": 140,
+      "completion_tokens": 6,
+      "total_tokens": 146,
+      "flow_latency_ms": 0.055
+    },
+    {
+      "id": "r14",
+      "label": "allow",
+      "latency_ms": 891.7,
+      "prompt_tokens": 139,
+      "completion_tokens": 6,
+      "total_tokens": 145,
+      "flow_latency_ms": 0.055
+    },
+    {
+      "id": "r15",
+      "label": "block",
+      "latency_ms": 883.1,
+      "prompt_tokens": 136,
+      "completion_tokens": 6,
+      "total_tokens": 142,
+      "flow_latency_ms": 0.045
+    },
+    {
+      "id": "r16",
+      "label": "block",
+      "latency_ms": 910.0,
+      "prompt_tokens": 141,
+      "completion_tokens": 6,
+      "total_tokens": 147,
+      "flow_latency_ms": 0.056
+    },
+    {
+      "id": "r17",
+      "label": "block",
+      "latency_ms": 970.6,
+      "prompt_tokens": 139,
+      "completion_tokens": 6,
+      "total_tokens": 145,
+      "flow_latency_ms": 0.062
+    },
+    {
+      "id": "r18",
+      "label": "allow",
+      "latency_ms": 911.7,
+      "prompt_tokens": 136,
+      "completion_tokens": 6,
+      "total_tokens": 142,
+      "flow_latency_ms": 0.044
+    },
+    {
+      "id": "r19",
+      "label": "block",
+      "latency_ms": 817.1,
+      "prompt_tokens": 135,
+      "completion_tokens": 6,
+      "total_tokens": 141,
+      "flow_latency_ms": 0.043
+    },
+    {
+      "id": "r20",
+      "label": "block",
+      "latency_ms": 873.4,
+      "prompt_tokens": 140,
+      "completion_tokens": 6,
+      "total_tokens": 146,
+      "flow_latency_ms": 0.055
+    },
+    {
+      "id": "r21",
+      "label": "restrict",
+      "latency_ms": 933.6,
+      "prompt_tokens": 137,
+      "completion_tokens": 7,
+      "total_tokens": 144,
+      "flow_latency_ms": 0.049
+    },
+    {
+      "id": "r22",
+      "label": "allow",
+      "latency_ms": 809.7,
+      "prompt_tokens": 138,
+      "completion_tokens": 6,
+      "total_tokens": 144,
+      "flow_latency_ms": 0.064
+    },
+    {
+      "id": "r23",
+      "label": "block",
+      "latency_ms": 991.7,
+      "prompt_tokens": 141,
+      "completion_tokens": 6,
+      "total_tokens": 147,
+      "flow_latency_ms": 0.063
+    },
+    {
+      "id": "r24",
+      "label": "review",
+      "latency_ms": 1005.0,
+      "prompt_tokens": 135,
+      "completion_tokens": 6,
+      "total_tokens": 141,
+      "flow_latency_ms": 0.07
+    },
+    {
+      "id": "r25",
+      "label": "block",
+      "latency_ms": 976.8,
+      "prompt_tokens": 138,
+      "completion_tokens": 6,
+      "total_tokens": 144,
+      "flow_latency_ms": 0.044
+    },
+    {
+      "id": "r26",
+      "label": "block",
+      "latency_ms": 1016.4,
+      "prompt_tokens": 138,
+      "completion_tokens": 6,
+      "total_tokens": 144,
+      "flow_latency_ms": 0.193
+    },
+    {
+      "id": "r27",
+      "label": "restrict",
+      "latency_ms": 839.5,
+      "prompt_tokens": 143,
+      "completion_tokens": 7,
+      "total_tokens": 150,
+      "flow_latency_ms": 0.099
+    },
+    {
+      "id": "r28",
+      "label": "block",
+      "latency_ms": 863.6,
+      "prompt_tokens": 139,
+      "completion_tokens": 6,
+      "total_tokens": 145,
+      "flow_latency_ms": 0.136
+    },
+    {
+      "id": "r29",
+      "label": "block",
+      "latency_ms": 962.0,
+      "prompt_tokens": 137,
+      "completion_tokens": 6,
+      "total_tokens": 143,
+      "flow_latency_ms": 0.051
+    },
+    {
+      "id": "r30",
+      "label": "allow",
+      "latency_ms": 851.0,
+      "prompt_tokens": 138,
+      "completion_tokens": 6,
+      "total_tokens": 144,
+      "flow_latency_ms": 0.067
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# ==== 隐私红线（永不入库）====
+.env
+.env.*
+.venv/
+*.key
+*.pem
+models/
+**/model.safetensors
+capability_gold.json
+
+# ==== 内部材料（丘奖查重 / AI 申报红线，参赛结束前不上传）====
+*.md
+!README.md
+development_ai_contribution.md
+learning_method_process.md
+research_proposal.md
+deep_bench_report.md
+gateway_benchmark_report.md
+mid_autumn_sprint_brief.md

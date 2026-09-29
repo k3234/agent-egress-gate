@@ -1,0 +1,11 @@
+{
+  "_comment": "白名单 = 路径 + 内容签名完全绑定。scope 只放行列出的功能，不加的功能不放行。（公开版：本机真实路径与文件指纹已替换为占位符，运行时请按本机环境填写）",
+  "entries": [
+    {
+      "path": "<LOCAL_RUNTIME_PYTHON_PATH>",
+      "sha256": "<LOCAL_FILE_SHA256>",
+      "scope": ["run"],
+      "reason": "本地 Python 运行时，用户授权放行 run 功能"
+    }
+  ]
+}

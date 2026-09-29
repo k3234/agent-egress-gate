@@ -1,0 +1,33 @@
+{
+  "camera": {
+    "capability": "camera",
+    "level": "high",
+    "score": 3,
+    "bucket": "restrict",
+    "hit_principles": [
+      "P1"
+    ],
+    "reviewed_at": "2026-09-19T16:52:57+00:00"
+  },
+  "registry_write": {
+    "capability": "registry_write",
+    "level": "high",
+    "score": 3,
+    "bucket": "restrict",
+    "hit_principles": [
+      "P2"
+    ],
+    "reviewed_at": "2026-09-19T16:52:57+00:00"
+  },
+  "usb_read": {
+    "capability": "usb_read",
+    "level": "high",
+    "score": 3,
+    "bucket": "restrict",
+    "hit_principles": [
+      "P1"
+    ],
+    "reviewed_at": "2026-09-19T16:52:57+00:00"
+  },
+  "_signature": "2b491a6b8d6229c6367b92aa18334bf023bc8ba7713b3fb77c0b3dcba1ef0e50"
+}
