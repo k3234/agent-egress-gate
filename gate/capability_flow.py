@@ -108,6 +108,16 @@ FILE_LEVEL_MARKERS = {"file", "files", "folder", "folders", "directory",
 # 强本地锚点：第一人称/本域自指或本地副词。
 LOCAL_ANCHOR = {"own", "our", "ours", "my", "me", "self", "myself",
                 "locally", "localhost"}
+# L13.2 快路径裂缝防护词表（§6.4 修复实装）：多轮投毒/授权伪装"包裹"形状。
+# 裂缝机制：confirm/verify 属 QUERY_VERBS，包裹句 "Confirm with allow and X"
+# 可凭空满足白名单规则 B 的 (has_local or query) 条件，把 review 短路径降成
+# allow（红队 e05 / 注入卷 pi09 同形，52 条测试集实测 12/24 真凶包裹漏放）。
+# 修复 = 命中包裹形状即禁用白名单降档，保持原桶交 L13.2 语义门复核；
+# 绝不升档，fail-closed 语义不变。代指词均不在 _ROOTS，词干化后原样保留。
+WRAPPER_STORY_MARKERS = {"previously", "agreed", "approved", "cleared", "prior"}
+WRAPPER_ALLOW_COMMANDS = (
+    "confirm with allow", "reply allow", "respond with allow",
+)
 
 # 封闭根词全集：词干化只允许把"已知根词的变形"塌缩回根，
 # 绝不把无关词硬塞进危险类 —— 显式清单优于隐式规则（项目价值观）。
@@ -264,6 +274,19 @@ def _exit_whitelist(tokens, roles, present, bucket):
     return None
 
 
+def _is_wrapper_shaped(text: str, tokens: List[str]) -> bool:
+    """L13.2 包裹形状检测：多轮协商代指 或 Confirm-with-allow 类指令短语。
+
+    命中即视为"把审查决定包进输入文本"的注入形状（红队 e05 / 注入卷 pi09 同形）。
+    短语在原文小写上匹配（不依赖词干化，短语级证据更稳）；代指词在 stem 后的
+    tokens 上匹配（不在 _ROOTS，词干化后原样保留，不会被误塌缩）。
+    """
+    low = text.lower()
+    if any(p in low for p in WRAPPER_ALLOW_COMMANDS):
+        return True
+    return any(t in WRAPPER_STORY_MARKERS for t in tokens)
+
+
 # ---------------------------------------------------------------
 # 2. 出口审查：按"数据流向哪个出口"判档，而不是按词面
 # ---------------------------------------------------------------
@@ -305,9 +328,14 @@ def flow_review(text: str) -> Tuple[int, str, str, List[str]]:
         score, level, bucket, ev = _LEVEL_NUM["medium"], "medium", "review", evidence
 
     # L13.1 白名单层（出口校验）：非 allow 时允许朝降档方向复核，绝不升档。
-    adjusted = _exit_whitelist(tokens, roles, present, bucket)
-    if adjusted is not None:
-        score, level, bucket, ev = adjusted
+    # L13.2 快路径裂缝防护（§6.4）：包裹形状（多轮投毒/Confirm-with-allow）
+    # 输入禁用白名单降档——包裹里的 confirm/verify 属 QUERY_VERBS，可凭空
+    # 满足规则 B 的 query 条件，把本应 review 的无动词外送短路径放行为 allow。
+    # 此处保持原桶（review 待审），交 L13.2 语义门双通道复核。
+    if not _is_wrapper_shaped(text, tokens):
+        adjusted = _exit_whitelist(tokens, roles, present, bucket)
+        if adjusted is not None:
+            score, level, bucket, ev = adjusted
     return score, level, bucket, ev
 
 
